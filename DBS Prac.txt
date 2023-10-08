@@ -1,0 +1,171 @@
+L3A
+
+1)
+SQL> select cname as CUSTNAME , count(order#) as no_of_orders,avg(ordamt) as abg_order_amt
+  2  from customer natural join orders
+  3  group by cname;
+
+2)
+select order#
+from warehouse natural join shipment
+where city = 'Noida';
+
+3)
+
+update orders
+set ordamt = case
+when order# in (select order# 
+from order_items
+where qty>4) then 1.1*ordamt
+else 1.05*ordamt
+end;
+
+L4A)
+
+a)
+select cname
+from customer natural join orders
+where odate = '18-AUG-23';
+
+b)
+select order#,count(item)
+from order_items
+group by order#
+
+c)
+select order#
+from order_items
+group by order#
+having count(item) >=
+all( select count(item)
+from order_items
+group by order#)
+
+d)
+select shipdate , count(order#)
+from shipment
+group by shipdate
+having count(order#)
+>=all
+(select count(order#)
+from shipment 
+group by shipdate);
+
+e)
+
+f)
+select distinct(order#) from
+shipment e
+where not exists (
+select warehouse from warehouse 
+where city = 'Mumbai'
+minus
+select warehouse from shipment s
+where e.order#=s.order#
+);
+
+g)
+select *
+from customer
+where cname like '%Arya';
+
+h)
+select cust,sum(ordamt) as totalorder
+from customer natural join orders
+group by cust
+order by totalorder; 
+
+i)
+select cust,cout(order#)
+from customer natural join orders natural join shipment
+where shipdate = '20-AUG-23'
+group by cust
+having count(order#)>=3;
+
+L5A)
+i)
+select *
+from customer
+where city is null;
+
+ii)
+select cust , sum(ordamt)
+from customer natural join orders
+group by cust
+having sum(ordamt)>=all
+(select sum(ordamt)
+from customer natural join orders
+group by cust);
+
+iii)
+select *
+from orders
+where order# not in
+( select order#
+from orders natural join shipment);
+
+iv)
+select *
+from item
+where item not in
+(select item
+from order_items natural join item);
+
+v)
+select item
+from order_items natural join customer
+group by item
+having count(cust)>=all
+(select count(cust)
+from order_items);
+
+vi)
+select *
+from orders where order# in(
+select order#
+from shipment
+where shipdate not in ('20-AUG-2023'));
+
+vii)
+select *
+from customer 
+where cust in
+(select cust
+from customer natural join orders natural join shipment
+where shipdate = '10-AUG-2023'
+intersect
+select cust 
+from customer natural join orders natural join shipment
+where shipdate = '18-AUG-2023');
+
+viii)
+select *
+from customer
+where cust in
+( select cust
+from orders natural join shipment
+group by cust
+having count(warehouse) =1);
+
+ix)
+select *
+from customer
+where cust in
+(select cust
+from customer natural join orders
+group by cust
+having count(order#) >=all
+(select count(order#)
+from customer natural join orders
+group by cust));
+
+
+
+
+
+
+
+
+
+
+

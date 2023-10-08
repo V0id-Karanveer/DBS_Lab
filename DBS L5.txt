@@ -1,0 +1,88 @@
+Lab 5)
+j) 
+create view v as
+select * from student
+where regno not in
+(select regno
+from enroll
+minus
+select regno
+from enroll natural join course
+)
+
+i)
+select *
+  2  from student
+  3  where regno not in
+  4  (select regno
+  5  from enroll
+  6  except
+  7  select regno
+  8  from enroll natural join book_adoptiion);
+
+h)
+select publisher,count(book_isbn)
+  2  from text
+  3  group by publisher;
+
+g)
+select *
+  2  from student
+  3  where regno in
+  4  (select regno
+  5  from enroll natural join book_adoptiion
+  6  group by regno
+  7  having count(book_isbn) >= all
+  8  (select count(book_isbn)
+  9  from enroll natural join book_adoptiion
+ 10  group by regno));
+
+f)
+select *
+  2  from course
+  3  where course in
+  4  ( select course
+  5  from course natural join book_adoptiion natural join text
+  6  where publisher = 'Miramax Books'
+  7  group by course
+  8  having count(publisher)>1);
+
+e)
+select *
+  2  from text
+  3  where book_isbn in
+  4  ( select book_isbn
+  5  from book_adoptiion natural join course natural join enroll);
+
+d)
+select *
+  2  from student
+  3  where regno not in
+  4  ( select regno
+  5  from enroll);
+
+c)
+select *
+  2  from student
+  3  where regno in
+  4  ( select regno
+  5  from enroll natural join course
+  6  group by regno
+  7  having count(dept) >1);
+
+b)
+select dept
+  2  from course natural join book_adoptiion join text using(book_isbn)
+  3  minus
+  4  select dept
+  5  from course natural join book_adoptiion join text using(book_isbn)
+  6  where publisher not in ('Miramax Books');
+
+a)
+select *
+  2  from course
+  3  where course in
+  4  ( select course
+  5  from book_adoptiion
+  6  group by course
+  7  having count(book_isbn) > 1);
