@@ -1,0 +1,12 @@
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\bin\Debug\BankingApplication.exe.config
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\bin\Debug\BankingApplication.exe
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\bin\Debug\BankingApplication.pdb
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csprojResolveAssemblyReference.cache
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Form1.resources
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Properties.Resources.resources
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csproj.GenerateResource.Cache
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.exe
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.pdb
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Form2.resources
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Form3.resources
+C:\Users\karan\Desktop\DBS Lab Prac\VC3#\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Form4.resources
